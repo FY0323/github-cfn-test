@@ -11,17 +11,4 @@ Resources:
         - Key: Name
           Value: cfn-cicd
         - Key: Environment
-          Value: !Sub ${Environment}Parameters:
-            Environment:
-              Type: String
-
-          Resources:
-            TutorialVPC:
-              Type: AWS::EC2::VPC
-              Properties:
-                CidrBlock: 10.0.0.0/16
-                Tags:
-                  - Key: Name
-                    Value: cfn-cicd
-                  - Key: Environment
-                    Value: !Sub ${Environment}
+          Value: !Sub ${Environment}
