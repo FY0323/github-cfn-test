@@ -20,6 +20,7 @@ jobs:
       run: cfn-lint template.yml
       
   build:
+    needs: lint
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
