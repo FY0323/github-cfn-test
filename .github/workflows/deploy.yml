@@ -17,7 +17,7 @@ jobs:
     - name: Install cfn-python-lint
       run: pip install --no-cache-dir cfn-lint
     - name: Execute Lint Check
-      runs: cfn-lint template.yml
+      run: cfn-lint template.yml
       
   build:
     runs-on: ubuntu-latest
