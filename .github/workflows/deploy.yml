@@ -25,9 +25,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: cfn-nag-action
-      uses: minchao/cfn-nag-action@v0.1
+      uses: stelligent/cfn_nag@master
       with:
-        args: '--input-path template.yml'
+        input-path: template.yml
 
   build:
     needs: lint
