@@ -27,7 +27,7 @@ jobs:
     - name: install cfn_nag
       uses: stelligent/cfn_nag@master
       with:
-        input_path: cfn-nag
+        input_path: cfn
         
   build:
     needs: [lint, cfn-nag]
