@@ -24,10 +24,12 @@ jobs:
   cfn-nag:
     runs-on: ubuntu-latest
     steps:
-    - name: cfn-nag-action
-      uses: stelligent/cfn_nag@dev
-      with:
-        args: '--input-path cfn-nag'
+    - name: install cfn_nag
+      run: |
+        apt install ruby
+        gem install cfn_nag
+    - name: execute cfn_nag
+      run: cfn_nag_scan --input-path cfn-nag
 
   build:
     needs: [lint, cfn-nag]
