@@ -26,11 +26,9 @@ jobs:
     steps:
     - name: cfn-nag-action
       uses: stelligent/cfn_nag@master
-      with:
-        input-path: template.yml
 
   build:
-    needs: lint
+    needs: [lint, cfn-nag]
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
