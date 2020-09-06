@@ -27,7 +27,7 @@ jobs:
     - name: cfn-nag-action
       uses: stelligent/cfn_nag@master
       with:
-        input_path: ./cfn-nag
+        args: '--input-path cfn-nag'
 
   build:
     needs: [lint, cfn-nag]
