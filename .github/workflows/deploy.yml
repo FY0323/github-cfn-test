@@ -25,9 +25,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: install cfn_nag
-      uses: stelligent/cfn_nag@master
-      with:
-        input_path: cfn
+      run: sudo gem install cfn-nag
+    - name: execute cfn_nag
+      run: cfn_nag_scan --input-path cfn
         
   build:
     needs: [lint, cfn-nag]
