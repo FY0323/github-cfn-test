@@ -12,3 +12,5 @@ Resources:
           Value: cfn-cicd
         - Key: Environment
           Value: !Sub ${Environment}
+        - Key: Test
+          Value: GitHub Actions
