@@ -20,7 +20,15 @@ jobs:
       run: pip install --no-cache-dir cfn-lint
     - name: Execute Lint Check
       run: cfn-lint template.yml
-      
+  
+  cfn-nag:
+    runs-on: ubuntu-latest
+    steps:
+    - name: cfn-nag-action
+      uses: minchao/cfn-nag-action@v0.1
+      with:
+        args: '--input-path template.yml'
+
   build:
     needs: lint
     runs-on: ubuntu-latest
