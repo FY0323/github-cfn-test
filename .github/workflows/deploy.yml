@@ -27,7 +27,9 @@ jobs:
     - name: install cfn_nag
       run: sudo gem install cfn-nag
     - name: execute cfn_nag
-      run: cfn_nag_scan --input-path cfn-nag
+      run: cfn_nag_scan
+      with:
+        args: '--input-path cfn-nag'
 
   build:
     needs: [lint, cfn-nag]
