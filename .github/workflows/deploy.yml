@@ -28,6 +28,7 @@ jobs:
       uses: stelligent/cfn_nag@master
       with:
         args: '--input-path cfn-nag'
+        extra_args: --fail-on-warnings
 
   build:
     needs: [lint, cfn-nag]
