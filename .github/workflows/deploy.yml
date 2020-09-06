@@ -25,10 +25,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: cfn-nag-action
-      uses: stelligent/cfn_nag@master
+      uses: stelligent/cfn_nag@dev
       with:
         args: '--input-path cfn-nag'
-        extra_args: --fail-on-warnings
 
   build:
     needs: [lint, cfn-nag]
