@@ -27,7 +27,7 @@ jobs:
     - name: install cfn_nag
       run: |
         sudo apt install ruby
-        gem install cfn_nag
+        gem install cfn-nag
     - name: execute cfn_nag
       run: cfn_nag_scan --input-path cfn-nag
 
