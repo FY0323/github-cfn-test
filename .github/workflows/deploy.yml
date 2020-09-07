@@ -24,6 +24,8 @@ jobs:
   cfn-nag:
     runs-on: ubuntu-latest
     steps:
+    - name: checkout
+      uses: actions/checkout@v2
     - name: install cfn_nag
       run: sudo gem install cfn-nag
     - name: execute cfn_nag
