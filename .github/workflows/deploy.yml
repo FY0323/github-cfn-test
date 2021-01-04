@@ -33,7 +33,8 @@ jobs:
       run: sudo gem install cfn-nag
     - name: execute cfn_nag
       run: |
-        cfn_nag_scan --input-path cfn
+        cfn_nag_scan --input-path cfn > result.txt
+        cat result.txt
         exit 0
     #- name: cfn-nag-actions
     #  uses: minchao/cfn-nag-action@master
