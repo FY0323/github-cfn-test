@@ -6,7 +6,7 @@ Resources:
     Type: "AWS::EC2::Instance"
     Properties:
       ImageId: "ami-0f9ae750e8274075b"
-      IamInstanceProfile: !Ref Ec2Role
+      IamInstanceProfile: !Ref Ec3Role
   Ec2Role:
     Type: "AWS::IAM::Role"
     Properties:
