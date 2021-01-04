@@ -12,25 +12,31 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Set Python Version
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.8'
-    - name: Install cfn-python-lint
-      run: pip install --no-cache-dir cfn-lint
-    - name: Execute Lint Check
-      run: cfn-lint cfn/template.yml
+    #- name: Set Python Version
+    #  uses: actions/setup-python@v2
+    #  with:
+    #    python-version: '3.8'
+    #- name: Install cfn-python-lint
+    #  run: pip install --no-cache-dir cfn-lint
+    #- name: Execute Lint Check
+    #  run: cfn-lint cfn/template.yml
+    - name: cfn-lint-actions
+      uses: shogo82148/actions-cfn-lint@v1
+
   
   cfn-nag:
     runs-on: ubuntu-latest
     steps:
     - name: checkout
       uses: actions/checkout@v2
-    - name: install cfn_nag
-      run: sudo gem install cfn-nag
-    - name: execute cfn_nag
-      run: cfn_nag_scan --input-path cfn
-        
+    #- name: install cfn_nag
+    #  run: sudo gem install cfn-nag
+    #- name: execute cfn_nag
+    #  run: cfn_nag_scan --input-path cfn
+    - name: cfn-nag-actions
+      uses: stelligent/cfn_nag@master
+      with:
+        input_path: cfn
 #  build:
 #    needs: [lint, cfn-nag]
 #    runs-on: ubuntu-latest
