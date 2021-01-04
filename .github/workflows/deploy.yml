@@ -34,9 +34,9 @@ jobs:
     #- name: execute cfn_nag
     #  run: cfn_nag_scan --input-path cfn
     - name: cfn-nag-actions
-      uses: stelligent/cfn_nag@master
+      uses: minchao/cfn-nag-action@master
       with:
-        input_path: cfn
+        args: '--input-path cfn'
 #  build:
 #    needs: [lint, cfn-nag]
 #    runs-on: ubuntu-latest
