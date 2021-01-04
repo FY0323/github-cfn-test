@@ -31,19 +31,15 @@ jobs:
       uses: actions/checkout@v2
     - name: install cfn_nag
       run: sudo gem install cfn-nag
-    - name: execute cfn_nag
+    #- name: execute cfn_nag
+    #  continue-on-error: true
+    #  run: |
+    #    cfn_nag_scan --input-path cfn
+    - name: cfn-nag-actions
       continue-on-error: true
-      run: |
-        cfn_nag_scan --input-path cfn
-    #  #  cfn_nag_scan --input-path cfn > result.txt
-    #  #  if [[ $? != 0]];
-    #  #    cat result.txt
-    #  #    exit 0
-    #  #  fi
-    #- name: cfn-nag-actions
-    #  uses: minchao/cfn-nag-action@master
-    #  with:
-    #    args: '--input-path cfn'
+      uses: minchao/cfn-nag-action@master
+      with:
+        args: '--input-path cfn'
 #  build:
 #    needs: [lint, cfn-nag]
 #    runs-on: ubuntu-latest
