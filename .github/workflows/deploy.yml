@@ -21,9 +21,8 @@ jobs:
     #- name: Execute Lint Check
     #  run: cfn-lint cfn/template.yml
     - name: cfn-lint-actions
-      uses: shogo82148/actions-cfn-lint@v1
+      uses: scottbrenner/cfn-lint-action@master
       with:
-        fail_on_error: true
         args: cfn/*.yml
 
   
