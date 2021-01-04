@@ -34,8 +34,10 @@ jobs:
     - name: execute cfn_nag
       run: |
         cfn_nag_scan --input-path cfn > result.txt
-        cat result.txt
-        exit 0
+        if [[ $? != 0]];
+          cat result.txt
+          exit 0
+        fi
     #- name: cfn-nag-actions
     #  uses: minchao/cfn-nag-action@master
     #  with:
