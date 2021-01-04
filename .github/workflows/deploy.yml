@@ -22,7 +22,8 @@ jobs:
     #  run: cfn-lint cfn/template.yml
     - name: cfn-lint-actions
       uses: shogo82148/actions-cfn-lint@v1
-      fail_on_error: true
+      with:
+        fail_on_error: true
 
   
   cfn-nag:
