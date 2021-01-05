@@ -77,5 +77,5 @@ jobs:
           tar -xvf cfn-guard-linux-${CFN_GUARD_VERSION}.tar.gz
       - name: check network template with CloudFormation Guard
         run: |
-          ./cfn-guard-linux/cfn-guard check --template ./cfn/*.yml --rule_set ./cfn-guard-rules/ruleset
+          ./cfn-guard-linux/cfn-guard check --template ./cfn/template.yml --rule_set ./cfn-guard-rules/ruleset
 
