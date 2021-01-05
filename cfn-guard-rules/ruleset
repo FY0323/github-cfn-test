@@ -1,6 +1,6 @@
 AWS::EC2::VPC CidrBlock == "10.0.0.0/16"
 
-AWS::EC2::Instance ImageId == "ami-0f9ae750e8274075b"
+AWS::EC2::Instance ImageId == ami-0f9ae750e8274075b
 
 AWS::EC2::VPC Tags.* == {"Key":"Name","Value":"cfn-cicd"}
 AWS::EC2::VPC Tags.* == {"Key":"Test","Value":"GitHub Actions failed"}
