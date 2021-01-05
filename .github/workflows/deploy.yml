@@ -77,6 +77,7 @@ jobs:
           wget https://github.com/aws-cloudformation/cloudformation-guard/releases/download/${CFN_GUARD_VERSION}/cfn-guard-linux-${CFN_GUARD_VERSION}.tar.gz
           tar -xvf cfn-guard-linux-${CFN_GUARD_VERSION}.tar.gz
       - name: check network template with CloudFormation Guard
+        continue-on-error: true
         run: |
-          ./cfn-guard-linux/cfn-guard check --template ./cfn/template.yml --rule_set ./cfn-guard-rules/ruleset
+          ./cfn-guard-linux/cfn-guard check --template ./cfn/*.yml --rule_set ./cfn-guard-rules/ruleset
 
