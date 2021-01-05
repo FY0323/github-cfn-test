@@ -79,5 +79,5 @@ jobs:
       - name: check network template with CloudFormation Guard
         continue-on-error: true
         run: |
-          ./cfn-guard-linux/cfn-guard check --template ./cfn/*.yml --rule_set ./cfn-guard-rules/ruleset
+          ./cfn-guard-linux/cfn-guard check --template ./cfn/template-ec2.yml --rule_set ./cfn-guard-rules/ruleset
 
